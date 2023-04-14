@@ -61,11 +61,14 @@ let valor = parseInt(prompt('Ingrese un valor entre 1 y 4'));
 let nombreCastellano = convertirCastellano(valor);
 document.write(nombreCastellano); */
 
+let dia = parseInt(prompt('Ingrese el número de día: '));
+let mes = parseInt(prompt('Ingrese el número de mes: '));
+let año = parseInt(prompt('Ingrese el número de año: '));
 function formatearFecha(dia, mes, año) {
     let s = 'Hoy es ' + dia + ' de ';
     switch (mes) {
         case 1:
-            s = s + 'enero ';
+            s = s + 'enero';
             break;
         case 2:
             s = s + 'febrero ';
@@ -101,8 +104,9 @@ function formatearFecha(dia, mes, año) {
             s = s + 'diciembre ';
             break;
     } //fin del switch
-    s = s + 'de ' + año;
+    /* s = s + 'de ' + año; */
+    s = `${s} de ${año}`;
     return s;
 }
 
-console.log(formatearFecha(23, 3, 2023));
+console.log(formatearFecha(dia, mes, año));
