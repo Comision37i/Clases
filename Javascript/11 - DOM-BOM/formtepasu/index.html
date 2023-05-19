@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Prueba</title>
+  <style>
+    form p {
+      display: flex;
+      max-width: 400px;
+      justify-content: space-between;
+    }
+
+    input {
+      padding: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="#" method="post" id="formulario">
+    <p>
+      <label for="usuario">Ingrese nombre de usuarios:</label>
+      <input type="text" id="usuario" />
+    </p>
+    <p>
+      <label for="clave1">Ingrese clave:</label>
+      <input type="password" id="clave1" />
+    </p>
+    <p>
+      <label for="clave2">Repita la clave: </label>
+      <input type="password" id="clave2" />
+    </p>
+    <p>
+      <input type="submit" value="confirmar" id="confirmar" />
+    </p>
+    <p id="resultado">      
+    </p>
+  </form>
+  <script src="./js/formtepasu.js"></script>
+</body>
+
+</html>
