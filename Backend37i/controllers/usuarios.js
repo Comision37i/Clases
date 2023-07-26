@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const Usuario = require('../models/usuario');
 
 const usuariosGet = async (req=request, res=response) => {
-    const {desde=0, limite=5} = req.query;
+    const {desde=0, limite=25} = req.query;
     const query = {estado:true}
     
     const [total, usuarios] = await Promise.all([
@@ -56,6 +56,7 @@ const usuarioPut = async (req=request, res=response) => {
         resto.password = bcrypt.hashSync(password, salt);
     }
     resto.correo = correo;
+
     //buscar el usuario y actualizarlo
     const usuario = await Usuario.findByIdAndUpdate(id, resto, {new: true})
 
@@ -70,7 +71,7 @@ const usuarioDelete = async (req=request, res=response) => {
     const usuarioAutenticado = req.usuario;
 
     //Para eliminar el registro
-   /*  const usuarioBorrado = await Usuario.findByIdAndDelete(id);
+   /* const usuarioBorrado = await Usuario.findByIdAndDelete(id);
 
     res.json({
         mensaje: 'Usuario borrado correctamente',
